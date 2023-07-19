@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from .models import CelestialObject, Visit
+from virtual_space.models import CelestialObject, Visit
 from .serializers import CelestialObjectSerializer, VisitSerializer
 
 
