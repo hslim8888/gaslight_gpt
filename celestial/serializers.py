@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import CelestialObject, ObservationLog, Photo
+from .models import CelestialObject, Visit
 
 
 class CelestialObjectSerializer(serializers.ModelSerializer):
@@ -8,13 +8,7 @@ class CelestialObjectSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class ObservationLogSerializer(serializers.ModelSerializer):
+class VisitSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ObservationLog
-        fields = '__all__'
-
-
-class PhotoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Photo
+        model = Visit
         fields = '__all__'

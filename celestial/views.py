@@ -1,18 +1,13 @@
-from rest_framework import generics
-from .models import CelestialObject, ObservationLog, Photo
-from .serializers import CelestialObjectSerializer, ObservationLogSerializer, PhotoSerializer
+from rest_framework import viewsets
+from .models import CelestialObject, Visit
+from .serializers import CelestialObjectSerializer, VisitSerializer
 
 
-class CelestialObjectListCreateAPIView(generics.ListCreateAPIView):
+class CelestialObjectViewSet(viewsets.ModelViewSet):
     queryset = CelestialObject.objects.all()
     serializer_class = CelestialObjectSerializer
 
 
-class ObservationLogCreateAPIView(generics.CreateAPIView):
-    queryset = ObservationLog.objects.all()
-    serializer_class = ObservationLogSerializer
-
-
-class PhotoCreateAPIView(generics.CreateAPIView):
-    queryset = Photo.objects.all()
-    serializer_class = PhotoSerializer
+class VisitViewSet(viewsets.ModelViewSet):
+    queryset = Visit.objects.all()
+    serializer_class = VisitSerializer
